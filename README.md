@@ -1,6 +1,6 @@
-# Doble Interfaz y Flashcards
+# Template de Proyectos
 
-> Proyecto web responsive con sistema de doble interfaz y flashcards educativos
+> Plantilla base para proyectos web con configuración completa de Antigravity (skills, rules, workflows)
 
 ## 📁 Estructura del Proyecto
 
