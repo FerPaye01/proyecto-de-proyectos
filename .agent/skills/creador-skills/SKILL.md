@@ -72,6 +72,9 @@ Ver carpeta `resources/` para templates y configs.
 ## Scripts Disponibles
 Ver carpeta `scripts/` para automatizaciones.
 
+## Solución de Problemas
+[Errores comunes y cómo solucionarlos]
+
 ## Logs
 - LOG_INFO: "[nombre-skill]: Mensaje"
 ```
