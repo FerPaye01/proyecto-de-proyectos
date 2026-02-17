@@ -73,6 +73,7 @@ Para cada skill verificar:
 - [ ] Triggers de activación están documentados
 - [ ] Instrucciones son ejecutables paso a paso
 - [ ] Hay al menos un ejemplo en examples/
+- [ ] Existe sección "Solución de Problemas" (opcional pero recomendada)
 - [ ] Logs están definidos con formato consistente
 
 ## Comandos del Usuario
