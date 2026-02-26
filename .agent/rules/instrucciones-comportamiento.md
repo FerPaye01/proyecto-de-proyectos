@@ -8,7 +8,9 @@ Patrones de trabajo y convenciones del proyecto.
 
 ---
 
-## English Naming Conventions
+## Naming Conventions
+- Todos los nombres de **variables, funciones, clases, archivos y directorios** deben estar en **INGLÉS**.
+- El texto visible para el usuario final (UI) debe estar en **ESPAÑOL**.
 
 ### Variables y Funciones
 - Variables: `camelCase` → `userData`, `flashcardList`
@@ -16,13 +18,14 @@ Patrones de trabajo y convenciones del proyecto.
 - Clases: `PascalCase` → `FlashcardManager`, `UserService`
 - Constantes: `SCREAMING_SNAKE_CASE` → `MAX_RETRIES`, `API_URL`
 
-### Archivos
-- Componentes: `camelCase` → `flashcardList.js`
-- Estilos: `camelCase` → `flashcardList.css`
-- Utilidades: `camelCase` → `logger.js`
+### Archivos y Directorios
+- Directorios: `kebab-case` o minúsculas → `components/`, `pages/`, `utils/`, `styles/`
+- Componentes: `camelCase` con extensión → `flashcardList.js`
+- Estilos: `camelCase` con extensión → `flashcardList.css`
+- Utilidades: `camelCase` con extensión → `logger.js`
 
 ### Comentarios
-- En español (para legibilidad del equipo)
+- En **español** (para legibilidad del equipo)
 - Breves y directos
 - Un comentario por función explicando el propósito
 
