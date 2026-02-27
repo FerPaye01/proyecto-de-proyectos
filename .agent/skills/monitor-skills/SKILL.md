@@ -72,7 +72,8 @@ Para cada skill verificar:
 - [ ] Propósito está claramente definido
 - [ ] Triggers de activación están documentados
 - [ ] Instrucciones son ejecutables paso a paso
-- [ ] Hay al menos un ejemplo en examples/
+- [ ] Existe evidencia de **profundidad técnica** (código, JSON, endpoints) y no solo teoría de alto nivel.
+- [ ] Hay al menos un ejemplo técnico y detallado en examples/
 - [ ] Existe sección "Solución de Problemas" (opcional pero recomendada)
 - [ ] Logs están definidos con formato consistente
 

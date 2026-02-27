@@ -32,8 +32,13 @@ Usar `search_web` para encontrar documentación oficial:
 search_web("[nombre-tecnología] official documentation getting started")
 ```
 
-### 3. Obtener Contenido
+### 3. Obtener Contenido Base
 Usar `read_url_content` para extraer el contenido de la URL encontrada.
+
+### 4. Investigación Profunda (OBLIGATORIO)
+- Analizar el contenido base en busca de enlaces hacia conceptos técnicos clave mencionados (ej. APIs, Referencias, Protocolos).
+- Iterar leyendo el contenido de al menos 2 a 3 URLs adicionales usando `read_url_content`.
+- Extraer ejemplos de código JSON, sintaxis específica de comandos, o descripciones de payloads que demuestren la implementación técnica real.
 
 ### 4. Guardar Conocimiento
 Crear archivo con la documentación procesada:

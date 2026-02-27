@@ -33,8 +33,9 @@ Usar `search_web` para encontrar actualizaciones:
 search_web("[nombre-tecnología] documentation changelog updates latest")
 ```
 
-### 3. Obtener Contenido Nuevo
-Usar `read_url_content` para extraer el contenido de las URLs encontradas.
+### 3. Obtener Contenido Nuevo e Investigación Profunda
+- Usar `read_url_content` para extraer el contenido de las URLs encontradas.
+- Obligatoriamente navegar por los enlaces técnicos relacionados dentro del contenido base buscando nuevos endpoints, esquemas JSON, variables de entorno o configuraciones avanzadas.
 
 ### 4. Comparar con Conocimiento Existente
 - Leer `resources/knowledge-source.md` actual

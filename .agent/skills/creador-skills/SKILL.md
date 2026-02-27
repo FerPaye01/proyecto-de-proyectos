@@ -25,12 +25,22 @@ Cada skill DEBE tener la siguiente estructura:
 
 ## Proceso de Creación
 
-### 1. Análisis de Documentación
-- Leer y comprender el contenido proporcionado
-- Identificar propósito principal
-- Extraer pasos e instrucciones clave
-- Detectar ejemplos de código
-- Identificar mejores prácticas
+### 1. Análisis de Documentación Expansivo
+- Leer y comprender el contenido proporcionado.
+- Si el contenido tiene enlaces a documentación técnica de bajo nivel (APIs, configuración JSON, etc.), navegarlos primero (Investigación exhaustiva).
+- Identificar propósito principal.
+- Extraer pasos, instrucciones clave, endpoints y esquemas.
+- Detectar ejemplos de código, prestando extrema atención a payloads o JSONs de configuración (no solo código de alto nivel).
+- Identificar mejores prácticas y limitantes.
+- Identificar logs y mensajes de error comunes.
+- Extraer comandos del usuario.
+- Extraer ejemplos de uso rápido
+- Extraer ejemplos de uso detallados
+- Extraer ejemplos de uso avanzados 
+- Extraer ejemplos de uso con scripts
+- Extraer ejemplos de uso con workflows
+- Extraer ejemplos de uso con pipelines
+- Extraer ejemplos de uso con pipelines
 
 ### 2. Generar Estructura Completa
 Crear todos los archivos y carpetas:
