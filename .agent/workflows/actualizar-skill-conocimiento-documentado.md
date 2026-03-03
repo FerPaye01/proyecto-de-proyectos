@@ -36,11 +36,14 @@ search_web("[nombre-tecnología] documentation changelog updates latest")
 ### 3. Obtener Contenido Nuevo e Investigación Profunda
 - Usar `read_url_content` para extraer el contenido de las URLs encontradas.
 - Obligatoriamente navegar por los enlaces técnicos relacionados dentro del contenido base buscando nuevos endpoints, esquemas JSON, variables de entorno o configuraciones avanzadas.
+- **REGLA ESPECIAL DE RESPETO AL CÓDIGO**: Si se encuentra código en las páginas, blogs, videos, repositorios, chats o cualquier fuente, DEBE COPIARSE EXACTAMENTE TAL CUAL, SIN VARIACIONES, simplificaciones ni adaptaciones.
+- **ARMONÍA CON EL STACK**: Validar que la tecnología o los códigos encontrados estén en ARMONÍA con el stack tecnológico definido en `.agent/rules/stack-tecnologico.md`.
 
 ### 4. Comparar con Conocimiento Existente
 - Leer `resources/knowledge-source.md` actual
 - Identificar diferencias y nuevo contenido
 - Determinar qué es información nueva
+- Confirmar si la actualización mantiene la coherencia con el proyecto global.
 
 ### 5. Guardar Actualización
 Crear archivo con la documentación nueva:
@@ -77,7 +80,13 @@ Agregar entrada en `resources/changelog.md`:
 - Cambios detectados: [resumen]
 ```
 
-### 9. Confirmar al Usuario
+### 9. Validación con el Usuario (Opción C)
+Usar el skill `formulacion-preguntas` para validar con el usuario:
+- Mostrar el resumen de los cambios.
+- Validar si la nueva actualización cubre lo esperado.
+- Consultar posibles escenarios de uso o falencias que la actualización pueda presentar.
+
+### 10. Confirmar al Usuario
 Mostrar:
 - URL de documentación usada
 - Cambios detectados

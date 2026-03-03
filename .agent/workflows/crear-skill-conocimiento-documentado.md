@@ -39,8 +39,10 @@ Usar `read_url_content` para extraer el contenido de la URL encontrada.
 - Analizar el contenido base en busca de enlaces hacia conceptos técnicos clave mencionados (ej. APIs, Referencias, Protocolos).
 - Iterar leyendo el contenido de al menos 2 a 3 URLs adicionales usando `read_url_content`.
 - Extraer ejemplos de código JSON, sintaxis específica de comandos, o descripciones de payloads que demuestren la implementación técnica real.
+- **REGLA ESPECIAL DE RESPETO AL CÓDIGO**: Si se encuentra código en blogs, videos, repositorios, chats o cualquier fuente, DEBE COPIARSE EXACTAMENTE TAL CUAL, SIN VARIACIONES, simplificaciones ni adaptaciones.
+- **ARMONÍA CON EL STACK**: Validar que la nueva tecnología sea armónica con el stack definido en `.agent/rules/stack-tecnologico.md`.
 
-### 4. Guardar Conocimiento
+### 5. Guardar Conocimiento
 Crear archivo con la documentación procesada:
 ```
 .agent/skills/[nombre-skill]/resources/knowledge-source.md
@@ -51,7 +53,7 @@ Incluir en el archivo:
 - Fecha de captura
 - Contenido procesado
 
-### 5. Consultar Skill `creador-skills`
+### 6. Consultar Skill `creador-skills`
 Leer `.agent/skills/creador-skills/SKILL.md` y seguir sus instrucciones para crear la estructura completa:
 
 ```
@@ -66,7 +68,7 @@ Leer `.agent/skills/creador-skills/SKILL.md` y seguir sus instrucciones para cre
     └── .gitkeep
 ```
 
-### 6. Generar SKILL.md
+### 7. Generar SKILL.md
 Crear el archivo principal con:
 - Frontmatter (name, description)
 - Propósito extraído de la documentación
@@ -75,7 +77,13 @@ Crear el archivo principal con:
 - Mejores prácticas detectadas
 - Referencia a la fuente original
 
-### 7. Confirmar al Usuario
+### 8. Validación con el Usuario (Opción C)
+Usar el skill `formulacion-preguntas` para validar con el usuario:
+- Presentar la estructura generada.
+- Validar si el propósito y las instrucciones cubren lo esperado.
+- Consultar casos de uso extremos o limitaciones detectadas.
+
+### 9. Confirmar al Usuario
 Mostrar:
 - Ruta del skill creado
 - URL de la documentación usada

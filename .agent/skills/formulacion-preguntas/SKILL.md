@@ -9,19 +9,27 @@ description: Estándar para la toma de requerimientos, clarificación de dudas y
 Asegurar que ninguna implementación compleja comience sin haber validado exhaustivamente los requerimientos ("Happy Path" y "Edge Cases"), visualizado la arquitectura y confirmado las asunciones del negocio.
 
 ## Cuándo Usar
-- Antes de escribir código para una nueva funcionalidad compleja (ej. matrices dinámicas, flujos de pago, lógica de negocio core).
-- Cuando el requerimiento del usuario sea ambiguo (ej. "mejora el sistema").
-- Al detectar riesgos de incoherencia en los datos (ej. tipos de datos mixtos, ordenamientos extraños).
+- **Inicio de Proyecto (OBLIGATORIO)**: Para definir el alma del proyecto, sus límites y su stack.
+- **Antes de escribir código complejo**: (ej. matrices dinámicas, flujos de pago, lógica de negocio core).
+- **Cuando el requerimiento sea ambiguo**: (ej. "mejora el sistema").
+- **Detección de incongruencias**: (ej. tipos de datos mixtos, ordenamientos extraños).
 
 ## Instrucciones
 
-### 1. Casos Hipotéticos (Edge Cases)
+### 1. Sesión de Clarificación de Proyecto (Inception)
+Si se activa para un inicio de proyecto, DEBE focalizarse en:
+- **Propósito Real**: ¿Qué necesidad humana o técnica satisface?
+- **Escenarios de Fallo Prematuro**: ¿Qué haría que este proyecto fallara en la semana 1?
+- **Falta de Coherencia**: ¿El stack elegido es el más simple para el problema?
+- **Limitantes Técnicas**: ¿Qué NO vamos a hacer para mantener la simplicidad?
+
+### 2. Casos Hipotéticos (Edge Cases)
 No te limites a preguntar "¿cómo quieres esto?". Plantea escenarios futuros que podrían romper el sistema:
 - **"¿Qué pasa si...?"**: Datos nulos, usuarios concurrentes, inputs inesperados.
 - **Futuro vs. Presente**: "¿Esto debe funcionar solo para X o escalar a Y en el futuro?"
 - **Contra-ejemplos**: "Si un usuario hace X, ¿el sistema debe bloquearlo o permitirlo?"
 
-### 2. Visualización Obligatoria (Mermaid)
+### 3. Visualización Obligatoria (Mermaid)
 Siempre incluye un diagrama para confirmar tu entendimiento.
 - Uss diagramas de flujo (`flowchart TD`) para lógica.
 - Usa diagramas de secuencia (`sequenceDiagram`) para interacciones entre componentes.
@@ -34,18 +42,18 @@ Siempre incluye un diagrama para confirmar tu entendimiento.
     ```
 - Acompaña el diagrama con: *"Así es como visualizo el flujo actual. ¿Es correcto?"*
 
-### 3. Coherencia y Flujo
+### 4. Coherencia y Flujo
 Cuestiona las brechas lógicas:
 - "¿Cómo se conecta el componente A con el B si tienen formatos distintos?"
 - "¿El paso 3 depende del paso 1 obligatoriamente?"
 
-### 4. Confirmaciones Explícitas
+### 5. Confirmaciones Explícitas
 Lista los componentes implicados y pide confirmación uno a uno si es necesario:
 - [ ] Base de Datos (Schema)
 - [ ] Frontend (UI/UX)
 - [ ] Lógica de Negocio (Reglas)
 
-### 5. Propuesta de Soluciones (Regla de 3 Opciones)
+### 6. Propuesta de Soluciones (Regla de 3 Opciones)
 Nunca ofrezcas una única solución técnica ("La Solución"). Ofrece siempre un abanico de **3 opciones (A, B, C)** ordenadas por complejidad o enfoque.
 
 **Fuente de las Opciones:**
