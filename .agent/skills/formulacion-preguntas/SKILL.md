@@ -9,7 +9,7 @@ description: Estándar para la toma de requerimientos, clarificación de dudas y
 Asegurar que ninguna implementación compleja comience sin haber validado exhaustivamente los requerimientos ("Happy Path" y "Edge Cases"), visualizado la arquitectura y confirmado las asunciones del negocio.
 
 ## Cuándo Usar
-- **Inicio de Proyecto (OBLIGATORIO)**: Para definir el alma del proyecto, sus límites y su stack.
+- **Inicio de Proyecto (OBLIGATORIO)**: Para definir el alma del proyecto, sus límites y su stack. 
 - **Antes de escribir código complejo**: (ej. matrices dinámicas, flujos de pago, lógica de negocio core).
 - **Cuando el requerimiento sea ambiguo**: (ej. "mejora el sistema").
 - **Detección de incongruencias**: (ej. tipos de datos mixtos, ordenamientos extraños).

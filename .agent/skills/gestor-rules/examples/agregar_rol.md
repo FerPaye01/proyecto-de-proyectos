@@ -14,7 +14,7 @@ Agrega el rol de Arquitecto
 3. Crear nueva entrada de rol
 4. Solicitar responsabilidades al usuario
 5. Agregar al archivo
-6. Confirmar operación
+6. Confirmar operación 
 
 ## Salida en RULES.md
 ```markdown

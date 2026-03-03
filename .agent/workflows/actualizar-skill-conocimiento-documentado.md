@@ -13,7 +13,6 @@ Actualiza un skill existente buscando nueva documentación oficial de la tecnolo
 ```
 /actualizar-skill-conocimiento-documentado [nombre-skill]
 ```
-
 ### Ejemplos:
 - `/actualizar-skill-conocimiento-documentado tailwind`
 - `/actualizar-skill-conocimiento-documentado prisma`
