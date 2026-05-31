@@ -7,27 +7,15 @@
 ```
 ├── .agent/
 │   ├── rules/                          # Reglas del proyecto (8 archivos)
-│   │   ├── RULES.md                    # Índice
-│   │   ├── topologia-agentes.md        # 🎭 Roles
-│   │   ├── instrucciones-comportamiento.md # 📜 Convenciones
-│   │   ├── principios-simplicidad.md   # 🔧 Código
-│   │   ├── principios-responsive.md    # 📱 Responsive
-│   │   ├── stack-tecnologico.md        # 📦 Stack
-│   │   ├── decisiones-pendientes.md    # 📋 Decisiones
-│   │   └── detector-tecnologias.md     # 🔍 Detecta tecnologías
-│   │
+│   │   └── ...
 │   ├── skills/                         # Habilidades del agente (3 skills)
-│   │   ├── creador-skills/             # Crea skills desde docs
-│   │   ├── gestor-rules/               # Gestiona rules
-│   │   └── monitor-skills/             # Monitorea y actualiza skills
-│   │
 │   └── workflows/                      # Flujos automatizados (6 workflows)
-│       ├── iniciar-proyecto.md
-│       ├── agregar-componente.md
-│       ├── crear-skill-conocimiento.md
-│       ├── crear-skill-conocimiento-documentado.md
-│       ├── actualizar-skill-conocimiento.md
-│       └── actualizar-skill-conocimiento-documentado.md
+│
+├── .analisis/                          # Documentación técnica y diseño
+│   ├── ARCHITECTURE_DESIGN.md          # Diseño de arquitectura
+│   ├── REQUIREMENTS_SPEC.md            # Especificación de requisitos
+│   ├── SPRINT_ROADMAP.md               # Plan de sprints
+│   └── TEST_ACCEPTANCE.md              # Pruebas de aceptación
 │
 ├── src/
 │   ├── utils/logger.js                 # Sistema de logs
