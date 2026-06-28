@@ -26,7 +26,7 @@ Antigravity presentará una lista de los cambios propuestos en una tabla:
 
 | Archivo | Contenido a Eliminar/Cambiar | Nuevo Contenido Propuesto |
 | :--- | :--- | :--- |
-| `stack-tecnologico.md` | ... | ... |
+| `instrucciones-comportamiento.md` | ... | ... |
 | `decisiones-pendientes.md` | ... | ... |
 
 ### 4. Confirmación Paso a Paso

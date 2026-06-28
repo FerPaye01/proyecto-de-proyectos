@@ -36,7 +36,7 @@ search_web("[nombre-tecnología] documentation changelog updates latest")
 - Usar `read_url_content` para extraer el contenido de las URLs encontradas.
 - Obligatoriamente navegar por los enlaces técnicos relacionados dentro del contenido base buscando nuevos endpoints, esquemas JSON, variables de entorno o configuraciones avanzadas.
 - **REGLA ESPECIAL DE RESPETO AL CÓDIGO**: Si se encuentra código en las páginas, blogs, videos, repositorios, chats o cualquier fuente, DEBE COPIARSE EXACTAMENTE TAL CUAL, SIN VARIACIONES, simplificaciones ni adaptaciones.
-- **ARMONÍA CON EL STACK**: Validar que la tecnología o los códigos encontrados estén en ARMONÍA con el stack tecnológico definido en `.agent/rules/stack-tecnologico.md`.
+- **ARMONÍA CON EL STACK**: Validar que la tecnología o los códigos encontrados estén en ARMONÍA con la arquitectura y stack definidos en `.agent/agents/.agent.architecture`.
 
 ### 4. Comparar con Conocimiento Existente
 - Leer `resources/knowledge-source.md` actual

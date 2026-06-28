@@ -8,6 +8,15 @@ Reglas duras de código que NO se negocian.
 
 ---
 
+## Cero Ambigüedad
+
+- ❌ **Prohibido usar marcadores temporales**: `# TODO`, `// placeholder`, `# implementar luego`, `pass` sin razón
+- ❌ **Prohibido dejar funciones vacías** o con lógica incompleta sin marcar explícitamente
+- ✅ **Las implementaciones deben ser funcionales y completas** al momento de ser escritas
+- ✅ **Type hints obligatorios en Python**: todas las variables y firmas de funciones deben tener anotaciones de tipo
+
+---
+
 ## Código Directo
 
 - ❌ **Sin try-catch redundantes** - Solo manejar errores críticos
@@ -95,3 +104,23 @@ function loadData() {
   return JSON.parse(data)
 }
 ```
+
+---
+
+## Análisis de Producto como Sistema
+
+**Regla always-on**: Antes de implementar cualquier tarea, el agente **SIEMPRE** debe:
+
+1. **Cuestionar la precisión del requerimiento** — ¿Es lo suficientemente específico?
+2. **Identificar edge cases de negocio** — ¿Qué pasa si el dato llega vacío, duplicado o en formato inesperado?
+3. **Señalar riesgos de diseño** — ¿Esta solución genera deuda técnica inmediata?
+4. **Validar coherencia con el sistema** — ¿Esta pieza encaja sin romper lo existente?
+
+### Cuándo aplica
+- Al recibir una nueva tarea o funcionalidad
+- Antes de proponer una arquitectura o cambio multi-archivo
+- Cuando el requerimiento sea ambiguo o incompleto
+
+### Cuándo NO aplica
+- Correcciones triviales (typo, color, texto)
+- Cuando el usuario pide explícitamente "rápido y directo"

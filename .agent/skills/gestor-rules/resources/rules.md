@@ -8,12 +8,12 @@ Reglas específicas para el skill de gestión de rules.
 
 Todos los archivos en `.agent/rules/`:
 - RULES.md (índice)
-- topologia-agentes.md
 - instrucciones-comportamiento.md
 - principios-simplicidad.md
 - principios-responsive.md
-- stack-tecnologico.md
 - decisiones-pendientes.md
+- detector-tecnologias.md
+- always-ask-rigorously.md
 
 ---
 
@@ -21,23 +21,16 @@ Todos los archivos en `.agent/rules/`:
 
 | Archivo | Operaciones |
 |---------|-------------|
-| topologia-agentes | Agregar/modificar roles |
-| instrucciones-comportamiento | Agregar convenciones |
-| principios-simplicidad | Agregar principios código |
+| instrucciones-comportamiento | Agregar convenciones, nomenclatura, logging |
+| principios-simplicidad | Agregar principios de código, edge cases |
 | principios-responsive | Agregar reglas responsive |
-| stack-tecnologico | Confirmar/actualizar tecnologías |
 | decisiones-pendientes | Registrar/resolver decisiones |
 
 ---
 
-## Proceso de Confirmación de Stack
+## Nota sobre Stack Tecnológico
 
-Cuando el usuario menciona una tecnología:
-1. Detectar mención ("Vamos a usar X", "Usaremos X")
-2. Preguntar: "¿Confirmas [X] para [propósito]?"
-3. Si confirma → Actualizar stack-tecnologico.md
-4. Agregar entrada al historial de cambios
-5. Confirmar con log
+El stack tecnológico **no vive en `.agent/rules/`**. Está definido en `.agent/agents/.agent.architecture`. El gestor-rules no lo gestiona.
 
 ---
 

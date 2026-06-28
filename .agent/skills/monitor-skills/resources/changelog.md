@@ -4,6 +4,15 @@ Registro de cambios en los skills del proyecto.
 
 ---
 
+## 2026-06-28
+
+### Actualizados
+- **formulacion-preguntas**: Rediseñado por completo para enfocar el análisis en hipótesis estructuradas por dominios de agentes especializados (asociadas a `.agent.architecture`).
+- **gestor-rules**: Modificado para remover referencias a `stack-tecnologico.md` y `topologia-agentes.md` (eliminados del framework).
+- **monitor-skills**: Revisión completa de inventario, estructuras y ejemplos de todos los skills del proyecto.
+
+---
+
 ## 2026-01-30
 
 ### Migración de Nomenclatura

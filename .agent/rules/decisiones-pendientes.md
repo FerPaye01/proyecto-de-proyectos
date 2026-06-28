@@ -2,68 +2,37 @@
 trigger: always_on
 ---
 
-# 📋 Decisiones Pendientes
+# 📋 Directriz: Registro de Decisiones Técnicas
 
-Registro de decisiones por tomar en el proyecto.
+Este archivo es una **regla estática**. Define el estándar obligatorio sobre cómo el asistente
+debe documentar y estructurar las decisiones de diseño del proyecto. 
 
----
-
-## Estado: 🟡 En Definición
-
----
-
-## Decisiones Técnicas
-
-### 1. Framework Frontend
-| Opción | Pros | Contras |
-|--------|------|---------|
-| Vanilla JS | Simple, sin build | Manual para UI compleja |
-| React | Componentes reactivos | Overhead de setup |
-| Vue | Balance simplicidad/poder | Aprender syntax |
-
-**Estado:** ⏳ Pendiente  
-**Decisión:** -
+> ⚠️ **REGLA DE REGISTRO**: Las decisiones técnicas reales no se guardan en este archivo.
+> Deben registrarse exclusivamente en la sección correspondiente de `.agent/perfil/razonamiento.md`.
 
 ---
 
-### 2. Sistema de Almacenamiento para Flashcards
-| Opción | Capacidad | Sincronización |
-|--------|-----------|----------------|
-| localStorage | ~5MB | ❌ Solo local |
-| IndexedDB | ~50MB+ | ❌ Solo local |
-| Backend + DB | Ilimitado | ✅ Multi-dispositivo |
+## ⚖️ Cómo Proponer y Registrar una Decisión
 
-**Estado:** ⏳ Pendiente  
-**Decisión:** -
+Cuando surja un dilema de diseño o arquitectura, el asistente debe documentarlo en `razonamiento.md` usando los siguientes bloques estructurados:
 
----
-
-### 3. Enrutamiento para Doble Interfaz
-| Opción | Complejidad | Caso de Uso |
-|--------|-------------|-------------|
-| Sin router | Baja | SPA simple |
-| Hash router | Media | Múltiples vistas |
-| History API | Alta | URLs limpias |
-
-**Estado:** ⏳ Pendiente  
-**Decisión:** -
-
----
-
-## Cómo Registrar una Decisión
-
-Cuando se tome una decisión:
+### 1. Formato para Decisiones Pendientes (Dilemas Activos)
+Se debe presentar una tabla comparativa con las opciones evaluadas antes de tomar una resolución:
 
 ```markdown
-**Estado:** ✅ Decidido (2026-01-30)  
-**Decisión:** [Opción elegida]  
-**Razón:** [Por qué se eligió]
+### N. [Título de la Decisión / Dilema]
+| Opción | Pros | Contras |
+| :--- | :--- | :--- |
+| Opción A | [Ventajas técnicas] | [Desventajas, costos, deudas] |
+| Opción B | [Ventajas técnicas] | [Desventajas, costos, deudas] |
+
+**Estado:** ⏳ Pendiente
+**Decisión:** -
 ```
 
----
+### 2. Formato para Decisiones Resueltas (Historial)
+Una vez que el usuario elige una opción o se llega a un consenso, la decisión se mueve a la tabla del **Historial de Decisiones Resueltas** en `razonamiento.md` bajo este formato de columnas:
 
-## Historial de Decisiones
-
-| Fecha | Decisión | Elegido |
-|-------|----------|---------|
-| - | - | - |
+| Fecha | Decisión | Solución elegida | Impacto en el sistema |
+| :--- | :--- | :--- | :--- |
+| YYYY-MM-DD | [Título] | [Opción elegida y breve razón técnica] | [Componentes o reglas modificadas] |

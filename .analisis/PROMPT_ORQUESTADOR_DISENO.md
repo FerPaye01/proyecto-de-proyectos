@@ -11,7 +11,7 @@ Todos los archivos generados deben ser agnósticos a la temática (plantillas es
 Para garantizar que los 4 artefactos estén interconectados y no existan contradicciones técnicas, debes aplicar la siguiente lógica de relación en cascada:
 
 1. **De Requisitos a Arquitectura (`REQUIREMENTS_SPEC.md` ➔ `ARCHITECTURE_DESIGN.md`):**
-   * Cada Requisito Funcional (RF) clave debe mapearse a un componente de software específico en la sección de "Descomposición de Software".
+   * Cada Requisito Funcional (RF) clave debe mapearse a un componente de software específico en la sección de "Descomposición de Software" resultando en algo observable, testeable, fuera de ambiguedades y considerando casos edge.
    * Cada Requisito No Funcional (RNF) cuantificable (SLA, RAM, Costos) debe justificar directamente una decisión tecnológica en la tabla de Arquitectura (ADR). No selecciones tecnología que no esté amparada por un RNF.
 
 2. **De Arquitectura a Plan de Ejecución (`ARCHITECTURE_DESIGN.md` ➔ `SPRINT_ROADMAP.md`):**
@@ -49,6 +49,7 @@ Cuando recibas el problema del usuario:
 3. **Validación de Consistencia:** Antes de finalizar, auto-evalúa si el Roadmap de la semana 2 provee las herramientas necesarias para ejecutar las pruebas unitarias y de robustez descritas en el plan de aceptación.
 
 ## 5. Entrada del Usuario (Contexto del Proyecto)
+Esta entrada debes explicarle al usuario para que pueda escribir explicitamente estos componentes:
 * **Problema a Resolver:** [Insertar descripción del problema aquí]
 * **Stack Tecnológico Inicial:** [Insertar lenguajes, frameworks y herramientas aquí]
 * **Restricciones de Infraestructura/Negocio:** [Insertar presupuesto, hardware disponible o plazos aquí]

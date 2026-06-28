@@ -1,6 +1,6 @@
 ---
 name: Gestor de Rules del Proyecto
-description: Actualiza y mantiene los archivos en .agent/rules/ incluyendo roles, principios, stack y decisiones
+description: Actualiza y mantiene los archivos en .agent/rules/ incluyendo principios, comportamiento y decisiones
 ---
 
 # Skill: Gestor de Rules del Proyecto
@@ -13,23 +13,17 @@ Mantener TODOS los archivos de reglas en `.agent/rules/` actualizados, coherente
 ```
 .agent/rules/
 ├── RULES.md                        # Índice
-├── topologia-agentes.md            # Roles del proyecto
-├── instrucciones-comportamiento.md # Patrones de trabajo
-├── principios-simplicidad.md       # Reglas de código
+├── instrucciones-comportamiento.md # Nomenclatura, logging, consentimiento
+├── principios-simplicidad.md       # Cero ambigüedad, análisis de producto
 ├── principios-responsive.md        # Diseño responsive
-├── stack-tecnologico.md            # Tecnologías
-└── decisiones-pendientes.md        # Por decidir
+├── decisiones-pendientes.md        # Por decidir
+├── detector-tecnologias.md         # Detecta tecnologías y sugiere workflows
+└── always-ask-rigorously.md        # Preguntar antes de actuar
 ```
 
 ---
 
 ## Triggers de Activación
-
-### Roles (topologia-agentes.md)
-| Frase | Acción |
-|-------|--------|
-| "Agrega el rol de X" | Crear nueva sección de rol |
-| "Modifica el rol X" | Actualizar rol existente |
 
 ### Comportamiento (instrucciones-comportamiento.md)
 | Frase | Acción |
@@ -42,14 +36,6 @@ Mantener TODOS los archivos de reglas en `.agent/rules/` actualizados, coherente
 |-------|--------|
 | "Nuevo principio: X" | Agregar principio |
 | "Regla de responsive: X" | Agregar a responsive |
-
-### Stack Tecnológico (stack-tecnologico.md)
-| Frase | Acción |
-|-------|--------|
-| "Vamos a usar X" | Confirmar y registrar tecnología |
-| "Usaremos X para Y" | Registrar con propósito |
-| "¿Qué stack tenemos?" | Mostrar resumen |
-| "Cambiamos X por Y" | Actualizar tecnología |
 
 ### Decisiones (decisiones-pendientes.md)
 | Frase | Acción |

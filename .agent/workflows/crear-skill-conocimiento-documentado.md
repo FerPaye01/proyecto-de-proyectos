@@ -40,7 +40,7 @@ Usar `read_url_content` para extraer el contenido de la URL encontrada.
 - Iterar leyendo el contenido de al menos 2 a 3 URLs adicionales usando `read_url_content`.
 - Extraer ejemplos de código JSON, sintaxis específica de comandos, o descripciones de payloads que demuestren la implementación técnica real.
 - **REGLA ESPECIAL DE RESPETO AL CÓDIGO**: Si se encuentra código en blogs, videos, repositorios, chats o cualquier fuente, DEBE COPIARSE EXACTAMENTE TAL CUAL, SIN VARIACIONES, simplificaciones ni adaptaciones.
-- **ARMONÍA CON EL STACK**: Validar que la nueva tecnología sea armónica con el stack definido en `.agent/rules/stack-tecnologico.md`.
+- **ARMONÍA CON EL STACK**: Validar que la nueva tecnología sea armónica con la arquitectura y stack definidos en `.agent/agents/.agent.architecture`.
 
 ### 5. Guardar Conocimiento
 Crear archivo con la documentación procesada:

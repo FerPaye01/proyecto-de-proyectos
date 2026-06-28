@@ -1,96 +1,90 @@
 ---
 name: Formulación de Preguntas
-description: Estándar para la toma de requerimientos, clarificación de dudas y validación de flujos mediante preguntas rigurosas y visuales.
+description: Estándar para la toma de requerimientos, clarificación de dudas y validación de flujos mediante hipótesis estructuradas por dominio de agente y diagramas visuales.
 ---
 
-# Skill: Formulación de Preguntas
+# Skill: Formulación de Preguntas (Hipótesis & Clarificación)
 
 ## Propósito
-Asegurar que ninguna implementación compleja comience sin haber validado exhaustivamente los requerimientos ("Happy Path" y "Edge Cases"), visualizado la arquitectura y confirmado las asunciones del negocio.
+Asegurar que ninguna implementación compleja o resolución de problemas comience sin haber validado exhaustivamente los requerimientos, visualizado la arquitectura y planteado hipótesis claras vinculadas a los agentes especializados de la arquitectura.
 
 ## Cuándo Usar
-- **Inicio de Proyecto (OBLIGATORIO)**: Para definir el alma del proyecto, sus límites y su stack. 
-- **Antes de escribir código complejo**: (ej. matrices dinámicas, flujos de pago, lógica de negocio core).
-- **Cuando el requerimiento sea ambiguo**: (ej. "mejora el sistema").
-- **Detección de incongruencias**: (ej. tipos de datos mixtos, ordenamientos extraños).
+- **Inicio de Proyecto (OBLIGATORIO)**: Para capturar los datos que alimentan al orquestador de diseño. Se deben preguntar y documentar bajo estos tres campos exactos:
+  1. **Problema a Resolver**: Descripción detallada del problema de negocio/técnico.
+  2. **Stack Tecnológico Inicial**: Lenguajes, frameworks y herramientas propuestos.
+  3. **Restricciones de Infraestructura/Negocio**: Presupuesto, hardware disponible, plazos o limitantes.
+- **Antes de escribir código complejo**: (ej. lógica de negocio core, optimizaciones, integraciones).
+- **Resolución de Bugs/Incidencias**: Para diagnosticar problemas planteando hipótesis claras en vez de probar soluciones a ciegas.
+- **Cuando el requerimiento sea ambiguo**: (ej. "mejora el rendimiento de la base de datos").
 
-## Instrucciones
+---
 
-### 1. Sesión de Clarificación de Proyecto (Inception)
-Si se activa para un inicio de proyecto, DEBE focalizarse en:
-- **Propósito Real**: ¿Qué necesidad humana o técnica satisface?
-- **Escenarios de Fallo Prematuro**: ¿Qué haría que este proyecto fallara en la semana 1?
-- **Falta de Coherencia**: ¿El stack elegido es el más simple para el problema?
-- **Limitantes Técnicas**: ¿Qué NO vamos a hacer para mantener la simplicidad?
+## Protocolo de Formulación (Paso a Paso)
 
-### 2. Casos Hipotéticos (Edge Cases)
-No te limites a preguntar "¿cómo quieres esto?". Plantea escenarios futuros que podrían romper el sistema:
-- **"¿Qué pasa si...?"**: Datos nulos, usuarios concurrentes, inputs inesperados.
-- **Futuro vs. Presente**: "¿Esto debe funcionar solo para X o escalar a Y en el futuro?"
-- **Contra-ejemplos**: "Si un usuario hace X, ¿el sistema debe bloquearlo o permitirlo?"
+### 1. Identificación del Dominio (Agente Especializado)
+Antes de proponer nada, identificar qué agentes de la arquitectura ([.agent.architecture](file:///data/proyectos/proyecto_de_proyectos/.agent/agents/.agent.architecture)) son responsables del problema.
+*Ejemplo: `fastapi_agent` para lógica de negocio, `vector_db_agent` para búsquedas semánticas, `ui_agent` para presentación.*
 
-### 3. Visualización Obligatoria (Mermaid)
-Siempre incluye un diagrama para confirmar tu entendimiento.
-- Uss diagramas de flujo (`flowchart TD`) para lógica.
-- Usa diagramas de secuencia (`sequenceDiagram`) para interacciones entre componentes.
-- **Formato**:
-    ```mermaid
-    flowchart TD
-    A[Usuario Input] -->|Valida| B{Es válido?}
-    B -- Sí --> C[Procesar]
-    B -- No --> D[Error]
-    ```
-- Acompaña el diagrama con: *"Así es como visualizo el flujo actual. ¿Es correcto?"*
+### 2. Visualización Obligatoria (Mermaid)
+Incluir siempre un diagrama para confirmar el entendimiento mutuo.
+- Usar diagramas de flujo (`flowchart TD`) para lógica o procesos.
+- Usar diagramas de secuencia (`sequenceDiagram`) para interacciones entre componentes/agentes.
 
-### 4. Coherencia y Flujo
-Cuestiona las brechas lógicas:
-- "¿Cómo se conecta el componente A con el B si tienen formatos distintos?"
-- "¿El paso 3 depende del paso 1 obligatoriamente?"
+### 3. Calibrar y Plantear Hipótesis (Mínimo 2 opciones)
+Antes de escribir las hipótesis, **leer obligatoriamente el archivo personal [perfil.md](file:///data/proyectos/proyecto_de_proyectos/.agent/perfil/perfil.md)** del usuario:
+- Identificar el nivel de expertise en la tecnología implicada.
+- **Calibrar la Verificación**:
+  - Si el nivel es **Principiante / Aprendiendo**, la sección *Verificación* debe explicarse paso a paso con el comando exacto o log a buscar.
+  - Si el nivel es **Avanzado / Domina**, la sección *Verificación* puede ser de alta abstracción (ej. "validar mediante test de integración").
 
-### 5. Confirmaciones Explícitas
-Lista los componentes implicados y pide confirmación uno a uno si es necesario:
-- [ ] Base de Datos (Schema)
-- [ ] Frontend (UI/UX)
-- [ ] Lógica de Negocio (Reglas)
-
-### 6. Propuesta de Soluciones (Regla de 3 Opciones)
-Nunca ofrezcas una única solución técnica ("La Solución"). Ofrece siempre un abanico de **3 opciones (A, B, C)** ordenadas por complejidad o enfoque.
-
-**Fuente de las Opciones:**
-1.  **Prioridad 1**: Búscalas en `resources/` del skill relevante.
-2.  **Prioridad 2**: Si no hay recursos, usa tu conocimiento general de AI para proponer patrones estándar.
-
-**Formato de Opciones:**
-- **Opción A (Conservadora/Estándar)**: Lo más rápido/fácil/común.
-- **Opción B (Robustez/Escalabilidad)**: Mejor arquitectura, más esfuerzo.
-- **Opción C (Innovadora/Alternativa)**: Un enfoque diferente (ej. Serverless vs Monolito, CSS vs Tailwind).
-
-**Iteración:**
-- Si el usuario rechaza A, B y C, pregunta *por qué* y genera **otras 3 opciones** (D, E, F) basándote en el feedback.
-
-## Estructura de la Pregunta
+Cada hipótesis debe seguir estrictamente este formato:
 
 ```markdown
-### 1. Visualización del Flujo
+#### Hipótesis [N] — Dominio: [Agente Especializado, ej: fastapi_agent]
+- **Creemos que**: [Causa sospechada del problema o justificación del diseño]
+- **Si implementamos**: [Mecanismo, intervención o cambio técnico propuesto]
+- **Entonces observaremos**: [Resultado esperado, medible o comportamiento final]
+- **Verificación**: [Método de prueba adaptado a mi nivel de expertise en perfil.md]
+- **Confianza**: Alta / Media / Baja
+```
+
+### 4. Preguntas de Contraste / Casos Límite
+Formular preguntas específicas sobre escenarios límite (edge cases) o fallos de negocio para validar la robustez de las hipótesis.
+
+---
+
+## Estructura de la Respuesta al Usuario
+
+```markdown
+### 1. Agentes Especializados Involucrados
+- `[nombre_agente_1]`: [Motivo por el que participa]
+- `[nombre_agente_2]`: [Motivo por el que participa]
+
+### 2. Visualización del Flujo Actual vs Propuesto
 [Diagrama Mermaid]
-"Actualmente entiendo que el dato viaja de A a B..."
 
-### 2. Casos Hipotéticos de Riesgo
-- Caso A: Usuario ingresa talla "10" antes de "2". ¿Cómo ordenamos?
-- Caso B: Producto nuevo sin categoría. ¿Se permite?
+### 3. Hipótesis de Abordaje (Opciones)
 
-### 3. Propuesta de Implementación
-He detectado estas formas de resolverlo:
+#### Hipótesis A — Dominio: [Agente]
+- **Creemos que**: ...
+- **Si implementamos**: ...
+- **Entonces observaremos**: ...
+- **Verificación**: ...
+- **Confianza**: ...
 
-| Opción | Descripción | Pro | Contra |
-| :--- | :--- | :--- | :--- |
-| **A** | Usar librería X | Rápido | Menos control |
-| **B** | Custom implementation | Control total | Más código |
-| **C** | Servicio externo Y | Delegado | Costo/Latencia |
+#### Hipótesis B — Dominio: [Agente]
+- **Creemos que**: ...
+- **Si implementamos**: ...
+- **Entonces observaremos**: ...
+- **Verificación**: ...
+- **Confianza**: ...
 
-¿Cuál prefieres?
+### 4. Casos de Riesgo / Preguntas de Contraste
+- ¿Qué sucede si el volumen de datos excede [X]?
+- ¿Debemos considerar este caso borde en la hipótesis A?
 ```
 
 ## Logs
-- LOG_INFO: "formulacion-preguntas: Generando cuestionario de validación para [tópico]..."
-- LOG_INFO: "formulacion-preguntas: Diagrama de flujo creado para confirmación."
+- `LOG_INFO: "formulacion-preguntas: Identificando dominios de agentes para [tópico]"`
+- `LOG_INFO: "formulacion-preguntas: Formulando hipótesis de desarrollo"`
+- `LOG_INFO: "formulacion-preguntas: Diagrama visual generado"`
