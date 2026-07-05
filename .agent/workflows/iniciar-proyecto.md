@@ -12,7 +12,7 @@ Capturar el contexto del proyecto, activar el `PROMPT_ORQUESTADOR_DISENO` como m
 ## Pasos
 
 ### 1. Sesión de Captura de Contexto (OBLIGATORIO)
-Ejecutar el skill `formulacion-preguntas` para obtener las 3 entradas que necesita el orquestador:
+Ejecutar el skill `formulacion-preguntas` (Problem Framing) para refinar el problema, detectar supuestos y seleccionar un enfoque de solución alternativo que alimentará las entradas del orquestador:
 
 - **Problema a Resolver**: ¿Qué necesidad de negocio o técnica resuelve exactamente?
 - **Stack Tecnológico Inicial**: ¿Qué lenguajes, frameworks y herramientas se proponen?
@@ -41,7 +41,7 @@ Producir los 4 archivos en este orden estricto, respetando la trazabilidad defin
 | Orden | Archivo | Contenido |
 |-------|---------|-----------|
 | 1° | `REQUIREMENTS_SPEC.md` | RF con verbos imperativos + RNF cuantificables |
-| 2° | `ARCHITECTURE_DESIGN.md` | Topología, diagrama Mermaid, ADR, SRP de módulos |
+| 2° | `ARCHITECTURE_DESIGN.md` | Topología, diagrama C4 (Nivel 2/3 en Markdown), ADR, SRP de módulos |
 | 3° | `SPRINT_ROADMAP.md` | 4 sprints con entregables tangibles y ruta crítica |
 | 4° | `TEST_ACCEPTANCE.md` | Escenarios UAT, mecanismos de defensa (DLQ, Rate Limits) |
 

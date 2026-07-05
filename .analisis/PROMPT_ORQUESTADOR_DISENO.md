@@ -32,7 +32,7 @@ Debes generar o actualizar los siguientes 4 archivos manteniendo los nombres exa
 * **Prohibición:** No incluyas nombres de clases de código ni tecnologías aquí; solo el comportamiento esperado y las restricciones.
 
 ### 📁 Archivo 2: `.analisis/ARCHITECTURE_DESIGN.md`
-* **Misión:** Definir la topología del sistema. Incluye un diagrama Mermaid.js que represente el flujo de datos real, justifica el stack tecnológico mediante una tabla comparativa (ADR) y detalla la separación de responsabilidades (SRP) de los módulos base.
+* **Misión:** Definir la topología del sistema. Incluye una representación en Markdown/ASCII de un diagrama C4 (Nivel 2 o 3 según corresponda) detallando los contenedores y componentes del sistema, justifica el stack tecnológico mediante una tabla comparativa (ADR) y detalla la separación de responsabilidades (SRP) de los módulos base.
 
 ### 📁 Archivo 3: `.analisis/SPRINT_ROADMAP.md`
 * **Misión:** Dividir el desarrollo en 4 bloques de tiempo/sprints con entregables de código tangibles por cada módulo de la arquitectura. Establecer los hitos de la ruta crítica.

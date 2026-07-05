@@ -37,9 +37,8 @@ El asistente **DEBE detenerse a esperar la aprobación explícita** del usuario 
 
 ## ❓ 3. Protocolo de Preguntas e Hipótesis
 Cuando sea necesario consultar al usuario:
-- Invocar el skill `formulacion-preguntas` para plantear hipótesis de desarrollo (mínimo 2) en vez de opciones de solución cerradas.
+- Invocar el skill `formulacion-preguntas` (Problem Framing) para reformular la intención, detectar supuestos y generar enfoques alternativos de solución sin comprometerse con ninguna.
 - Consultar el archivo [perfil.md](file:///data/proyectos/proyecto_de_proyectos/.agent/perfil/perfil.md) para calibrar la jerga técnica y la complejidad de los pasos de verificación de la hipótesis.
-- **Visualización**: Los diagramas Mermaid son opcionales. Solo generarlos si el flujo lógico/arquitectónico es verdaderamente complejo o si el usuario lo solicita.
 
 ---
 

@@ -1,90 +1,88 @@
 ---
-name: Formulación de Preguntas
-description: Estándar para la toma de requerimientos, clarificación de dudas y validación de flujos mediante hipótesis estructuradas por dominio de agente y diagramas visuales.
+name: Problem Framing
+description: Refina una idea antes de la Etapa 0 generando posibles enfoques de solución sin decidir cuál es el correcto.
 ---
 
-# Skill: Formulación de Preguntas (Hipótesis & Clarificación)
+# Skill: Problem Framing (Etapa -1)
 
 ## Propósito
-Asegurar que ninguna implementación compleja o resolución de problemas comience sin haber validado exhaustivamente los requerimientos, visualizado la arquitectura y planteado hipótesis claras vinculadas a los agentes especializados de la arquitectura.
+Refinar la idea inicial del usuario para alimentar la Etapa 0.
+
+No investigar.
+No validar.
+No diseñar la solución.
+No elegir una alternativa.
+Solo ampliar el espacio de posibles enfoques desde la experiencia de un ingeniero senior.
 
 ## Cuándo Usar
-- **Inicio de Proyecto (OBLIGATORIO)**: Para capturar los datos que alimentan al orquestador de diseño. Se deben preguntar y documentar bajo estos tres campos exactos:
-  1. **Problema a Resolver**: Descripción detallada del problema de negocio/técnico.
-  2. **Stack Tecnológico Inicial**: Lenguajes, frameworks y herramientas propuestos.
-  3. **Restricciones de Infraestructura/Negocio**: Presupuesto, hardware disponible, plazos o limitantes.
-- **Antes de escribir código complejo**: (ej. lógica de negocio core, optimizaciones, integraciones).
-- **Resolución de Bugs/Incidencias**: Para diagnosticar problemas planteando hipótesis claras en vez de probar soluciones a ciegas.
-- **Cuando el requerimiento sea ambiguo**: (ej. "mejora el rendimiento de la base de datos").
+- **Inicio de Proyecto / Refinamiento de Idea**: Para refinar la idea antes de la Etapa 0, expandiendo el espacio de soluciones sin comprometerse con ninguna.
+- **Sesión de Lluvia de Ideas / Exploración**: Una sesión en donde se debe de expandir el espacio de soluciones sin tomar decisiones de diseño ni comprometerse con ningún enfoque.
+- **Cuando el requerimiento sea ambiguo**: (ej. "mejora el rendimiento de la base de datos", "quiero una app de notas") para desglosar el problema real antes de diseñar.
 
 ---
 
-## Protocolo de Formulación (Paso a Paso)
+## Instrucciones
 
-### 1. Identificación del Dominio (Agente Especializado)
-Antes de proponer nada, identificar qué agentes de la arquitectura ([.agent.architecture](file:///data/proyectos/proyecto_de_proyectos/.agent/agents/.agent.architecture)) son responsables del problema.
-*Ejemplo: `fastapi_agent` para lógica de negocio, `vector_db_agent` para búsquedas semánticas, `ui_agent` para presentación.*
+Antes de formular la respuesta, **leer obligatoriamente el archivo personal [perfil.md](file:///data/proyectos/proyecto_de_proyectos/.agent/perfil/perfil.md) del usuario**:
+- Identificar el nivel de expertise en las tecnologías mencionadas.
+- Calibrar la jerga técnica y la complejidad del planteamiento de alternativas al nivel del usuario.
 
-### 2. Visualización Obligatoria (Mermaid)
-Incluir siempre un diagrama para confirmar el entendimiento mutuo.
-- Usar diagramas de flujo (`flowchart TD`) para lógica o procesos.
-- Usar diagramas de secuencia (`sequenceDiagram`) para interacciones entre componentes/agentes.
+A partir de la idea del usuario, ejecuta los siguientes pasos:
 
-### 3. Calibrar y Plantear Hipótesis (Mínimo 2 opciones)
-Antes de escribir las hipótesis, **leer obligatoriamente el archivo personal [perfil.md](file:///data/proyectos/proyecto_de_proyectos/.agent/perfil/perfil.md)** del usuario:
-- Identificar el nivel de expertise en la tecnología implicada.
-- **Calibrar la Verificación**:
-  - Si el nivel es **Principiante / Aprendiendo**, la sección *Verificación* debe explicarse paso a paso con el comando exacto o log a buscar.
-  - Si el nivel es **Avanzado / Domina**, la sección *Verificación* puede ser de alta abstracción (ej. "validar mediante test de integración").
+### 1. Reformula la intención
+Resume en una o dos frases qué problema parece querer resolver.
 
-Cada hipótesis debe seguir estrictamente este formato:
+### 2. Detecta supuestos
+Identifica los supuestos implícitos de la idea.
 
-```markdown
-#### Hipótesis [N] — Dominio: [Agente Especializado, ej: fastapi_agent]
-- **Creemos que**: [Causa sospechada del problema o justificación del diseño]
-- **Si implementamos**: [Mecanismo, intervención o cambio técnico propuesto]
-- **Entonces observaremos**: [Resultado esperado, medible o comportamiento final]
-- **Verificación**: [Método de prueba adaptado a mi nivel de expertise en perfil.md]
-- **Confianza**: Alta / Media / Baja
-```
+### 3. Genera enfoques alternativos
+Propón entre **3 y 7 enfoques** que podrían resolver el mismo problema.
+Los enfoques deben ser conceptualmente distintos (no pequeñas variantes).
+No descartes la idea del usuario: inclúyela como una alternativa si corresponde.
 
-### 4. Preguntas de Contraste / Casos Límite
-Formular preguntas específicas sobre escenarios límite (edge cases) o fallos de negocio para validar la robustez de las hipótesis.
+### 4. Señala diferencias
+Para cada enfoque indica brevemente:
+- Idea principal
+- Principal ventaja
+- Principal riesgo
+- Cuándo tendría sentido elegirlo
 
 ---
 
-## Estructura de la Respuesta al Usuario
+## Formato de Salida
 
-```markdown
-### 1. Agentes Especializados Involucrados
-- `[nombre_agente_1]`: [Motivo por el que participa]
-- `[nombre_agente_2]`: [Motivo por el que participa]
+### Problema Refinado
+[Una o dos frases sobre el problema real a resolver]
 
-### 2. Visualización del Flujo Actual vs Propuesto
-[Diagrama Mermaid]
+### Supuestos Detectados
+- [Supuesto implícito 1]
+- [Supuesto implícito 2]
+- ...
 
-### 3. Hipótesis de Abordaje (Opciones)
+### Posibles Enfoques
 
-#### Hipótesis A — Dominio: [Agente]
-- **Creemos que**: ...
-- **Si implementamos**: ...
-- **Entonces observaremos**: ...
-- **Verificación**: ...
-- **Confianza**: ...
+**Enfoque A (Idea del usuario / Enfoque base)**
+- **Idea principal**: ...
+- **Principal ventaja**: ...
+- **Principal riesgo**: ...
+- **Cuándo tendría sentido elegirlo**: ...
 
-#### Hipótesis B — Dominio: [Agente]
-- **Creemos que**: ...
-- **Si implementamos**: ...
-- **Entonces observaremos**: ...
-- **Verificación**: ...
-- **Confianza**: ...
+**Enfoque B**
+- **Idea principal**: ...
+- **Principal ventaja**: ...
+- **Principal riesgo**: ...
+- **Cuándo tendría sentido elegirlo**: ...
 
-### 4. Casos de Riesgo / Preguntas de Contraste
-- ¿Qué sucede si el volumen de datos excede [X]?
-- ¿Debemos considerar este caso borde en la hipótesis A?
-```
+**Enfoque C**
+- ...
+
+### Recomendación para la Etapa 0
+Estas alternativas pueden convertirse en hipótesis independientes para ser investigadas mediante el metaprompt de la Etapa 0.
+
+---
 
 ## Logs
-- `LOG_INFO: "formulacion-preguntas: Identificando dominios de agentes para [tópico]"`
-- `LOG_INFO: "formulacion-preguntas: Formulando hipótesis de desarrollo"`
-- `LOG_INFO: "formulacion-preguntas: Diagrama visual generado"`
+- `LOG_INFO: "problem-framing: Calibrando jerga con perfil del usuario"`
+- `LOG_INFO: "problem-framing: Reformulando intención"`
+- `LOG_INFO: "problem-framing: Detectando supuestos implícitos"`
+- `LOG_INFO: "problem-framing: Generando enfoques alternativos de solución"`

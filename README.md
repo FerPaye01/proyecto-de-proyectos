@@ -34,10 +34,7 @@
 │   ├── REQUIREMENTS_SPEC.md            # Especificación de requisitos
 │   ├── SPRINT_ROADMAP.md               # Plan de sprints
 │   └── TEST_ACCEPTANCE.md              # Pruebas de aceptación
-│
-├── src/
-│   ├── utils/logger.js                 # Sistema de logs
-│   └── styles/variables.css            # Variables CSS responsive
+
 │
 └── README.md
 ```
