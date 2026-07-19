@@ -19,7 +19,8 @@ Antes de responder, el asistente debe validar su propia propuesta contra este ch
   - Si es Python, ¿se exige activar el entorno virtual (`venv`)?
   - ¿Los logs propuestos son autocontenidos y siguen las convenciones de JS/Python?
 - **Auditoría de Pensamiento Crítico (➔ [pensamiento-critico](file:///data/proyectos/proyecto_de_proyectos/.agent/skills/pensamiento-critico/SKILL.md))**:
-  - Si propongo un plan o cambio de diseño, ¿he listado y desafiado al menos 3 premisas obvias mediante pensamiento lateral?
+  - Aplicar pensamiento crítico *silencioso* para evitar código roto o sobreingeniería.
+  - El reporte formal de auditoría y desafío de 3 premisas solo se genera **bajo demanda explícita** del usuario (ej. `/critica` o "audita esto") o en cambios de arquitectura críticos.
 - **Detector de Tecnologías (➔ [detector-tecnologias.md](file:///data/proyectos/proyecto_de_proyectos/.agent/rules/detector-tecnologias.md))**:
   - Si el usuario menciona querer aprender algo, proporciona documentación o pregunta sobre una nueva herramienta, ¿he sugerido activar los workflows de creación/actualización de skills?
 - **Registro de Estado (➔ [decisiones-pendientes.md](file:///data/proyectos/proyecto_de_proyectos/.agent/rules/decisiones-pendientes.md) / [deudas-tecnicas.md](file:///data/proyectos/proyecto_de_proyectos/.agent/rules/deudas-tecnicas.md))**:
@@ -27,7 +28,13 @@ Antes de responder, el asistente debe validar su propia propuesta contra este ch
 
 ---
 
-## 🛑 2. Frenos de Seguridad e Intervención (Detenerse y Esperar)
+## 🚀 2. Modo de Trabajo por Defecto: Ejecución Directa (Cero Fricción)
+- **Prioridad de Entrega**: Si el usuario entrega instrucciones, un plan o un requerimiento directo, el asistente debe responder con el código o resultado completo **de inmediato**, sin hacer cuestionarios previos ni presentar 5 alternativas.
+- **Sin Interrupciones en Etapa 0 / Construcción**: Si el usuario ya tiene un plan o investigación previa, se omite por completo la Etapa -1 (`formulacion-preguntas`).
+
+---
+
+## 🛑 3. Frenos de Seguridad e Intervención (Detenerse y Esperar)
 El asistente **DEBE detenerse a esperar la aprobación explícita** del usuario antes de:
 1. Modificar múltiples archivos a la vez o proponer cambios de arquitectura lógica.
 2. Ejecutar comandos de terminal que escriban, alteren o eliminen archivos en el sistema (excluyendo lecturas).
@@ -35,12 +42,11 @@ El asistente **DEBE detenerse a esperar la aprobación explícita** del usuario 
 
 ---
 
-## ❓ 3. Protocolo de Preguntas e Hipótesis
-Cuando sea necesario consultar al usuario:
-- Invocar el skill `formulacion-preguntas` (Problem Framing) para reformular la intención, detectar supuestos y generar enfoques alternativos de solución sin comprometerse con ninguna.
-- Consultar el archivo [perfil.md](file:///data/proyectos/proyecto_de_proyectos/.agent/perfil/perfil.md) para calibrar la jerga técnica y la complejidad de los pasos de verificación de la hipótesis.
+## ❓ 4. Protocolo de Preguntas e Hipótesis (Bajo Demanda)
+- **Cuándo Usar `formulacion-preguntas`**: Únicamente cuando la idea sea totalmente ambigua, se inicie un proyecto desde cero sin plan previo (Etapa -1), o el usuario solicite explícitamente explorar alternativas antes de decidir.
+- Consultar el archivo [perfil.md](file:///data/proyectos/proyecto_de_proyectos/.agent/perfil/perfil.md) para calibrar la jerga técnica.
 
 ---
 
 ## 🚫 Excepciones de Parada
-No requiere pausar la ejecución en tareas triviales (ej. corrección de typos menores, cambio de textos estáticos, o cuando el usuario pida de forma explícita "un cambio directo sin preguntas").
+No requiere pausar la ejecución en tareas directas de código, refactorizaciones sencillas o corrección de bugs donde la instrucción sea clara.

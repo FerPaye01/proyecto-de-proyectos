@@ -14,10 +14,10 @@ No diseñar la solución.
 No elegir una alternativa.
 Solo ampliar el espacio de posibles enfoques desde la experiencia de un ingeniero senior.
 
-## Cuándo Usar
-- **Inicio de Proyecto / Refinamiento de Idea**: Para refinar la idea antes de la Etapa 0, expandiendo el espacio de soluciones sin comprometerse con ninguna.
-- **Sesión de Lluvia de Ideas / Exploración**: Una sesión en donde se debe de expandir el espacio de soluciones sin tomar decisiones de diseño ni comprometerse con ningún enfoque.
-- **Cuando el requerimiento sea ambiguo**: (ej. "mejora el rendimiento de la base de datos", "quiero una app de notas") para desglosar el problema real antes de diseñar.
+## Cuándo Usar (Bajo Demanda Únicamente)
+- **Inicio de Proyecto sin Plan (Etapa -1)**: Únicamente cuando el usuario exprese una idea vaga desde cero y no tenga ningún plan o investigación previa.
+- **Invocación Manual / Sesión de Ideación**: Cuando el usuario pida explícitamente "ayúdame a explorar opciones" o use comandos de lluvia de ideas.
+- **NO USAR**: Cuando el usuario ya traiga un plan, requerimiento estructurado, investigación o instrucción directa de construcción.
 
 ---
 

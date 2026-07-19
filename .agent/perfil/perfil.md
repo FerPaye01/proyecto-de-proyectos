@@ -32,4 +32,5 @@ de los métodos de verificación en sus habilidades de formulación de preguntas
   *(Didáctica / Explicativa: Explica términos técnicos complejos · Directa y Dura: Usa jerga de industria sin rodeos)*
 - **Métodos de Verificación**: Paso a paso con comandos
   *(Paso a paso con comandos: Ideal para principiantes/delegación · Alta abstracción: Describe el resultado esperado a alto nivel)*
+- **Modo de Trabajo**: Ágil / Ejecución Directa (Priorizar entrega de código y respuestas directas; omitir Etapa -1 y cuestionarios a menos que se solicite explícitamente).
 - **Temas de Interés**: Ingeniería de prompts, RAG, bases de datos vectoriales, optimización de LLMs.

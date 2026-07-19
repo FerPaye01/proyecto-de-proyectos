@@ -19,6 +19,7 @@ Este archivo sirve como índice. Las reglas principales están en `.agent/rules/
 | [decisiones-pendientes.md](decisiones-pendientes.md) | `always_on` | 📋 Directriz de formato para el registro de decisiones técnicas |
 | [deudas-tecnicas.md](deudas-tecnicas.md) | `always_on` | 🔧 Directriz de formato para el registro de deuda técnica |
 | [detector-tecnologias.md](detector-tecnologias.md) | `always_on` | 🔍 Detecta tecnologías y sugiere workflows |
+| [principios-desacoplamiento.md](principios-desacoplamiento.md) | `always_on` | 🔗 Principios de desacoplamiento y modularidad en capas |
 
 ---
 
